@@ -14,15 +14,26 @@
     <div class="main-content">
         {{>header}}
 
-        <p>Use this site to get your weather!</p>
-
         <form>
             <input type="text" placeholder="Location" required>
             <button>Search</button>
         </form>
-
-        <p id="messageOne"></p>
-        <p id="messageTwo"></p>
+        <br />
+        <main>
+            <div class="bg">
+                <section class="location">
+                    <div class="city" id="city">Mumbai, Maharashtra, India</div>
+                    <div class="date" id="date">Tue, 22 Jun 2021 18:15:00 GMT</div>
+                </section>
+                <div class="current">
+                    <div class="temp" id="temp">21<span>°c</span></div>
+                    <div class="feel" id="feel">Feels like: 26<span>°c</span></div>
+                    <div class="weather" id="weather">Overcast</div>
+                    <div class="hi-low" id="hi-low">19°c / 24°c</div> <br />
+                    <div class="details" id="details">Wind Speed: 6.2kmph&nbsp;&nbsp;&nbsp;&nbsp; Humidity: 51%</div>
+                </div>
+            </div>
+        </main>
     </div>
 
     {{>footer}}

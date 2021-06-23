@@ -12,11 +12,15 @@ const forecast = (latitude, longitude, callback) => {
         } else {
             const data = {
                 temp: response.body.current.temp_c,
-                summary: response.body.current.condition.text,
-                condition: response.body.forecast.forecastday[0].day.condition.text
+                feelsLike: response.body.current.feelslike_c,
+                lastUpdated: new Date(response.body.current.last_updated).toUTCString(),
+                condition: response.body.current.condition.text,
+                tempHigh: response.body.forecast.forecastday[0].day.maxtemp_c,
+                tempLow: response.body.forecast.forecastday[0].day.mintemp_c,
+                windSpeed: response.body.current.wind_kph,
+                humidity: response.body.current.humidity
             };
-            callback(undefined, 'It is ' + data.temp + ' degree celcius out here. There is a possibility of '
-                + data.summary + '. ' + data.condition + '.');
+            callback(undefined, data);
         }
     });
 }
